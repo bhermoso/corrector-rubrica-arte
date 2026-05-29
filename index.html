@@ -701,7 +701,7 @@ function cargarTrabajo(archivo){
   fetch(BASE_URL + archivo + '?v=' + Date.now())
     .then(function(r){ return r.json(); })
     .then(function(data){
-      // Limpiar estado anterior
+      console.log('JSON recibido:', JSON.stringify(data.trabajo)); // Limpiar estado anterior
       Object.keys(PUNTOS).forEach(function(k){ delete PUNTOS[k]; });
       Object.keys(OBS_ITEM).forEach(function(k){ delete OBS_ITEM[k]; });
 
