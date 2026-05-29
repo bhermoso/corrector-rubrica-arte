@@ -568,7 +568,7 @@ function reiniciar(){
   buildRubrica();
   document.getElementById('f-titulo').value='';
   document.getElementById('f-autor').value='';
-  document.getElementById('f-profesor').value='';
+  
   document.getElementById('f-asignatura').value='';
   document.getElementById('f-obs').value='';
   document.getElementById('f-fecha').value=new Date().toLocaleDateString('es-ES');
@@ -588,7 +588,7 @@ function cargarJSON(input){
         'f-titulo': data.trabajo && data.trabajo.titulo ? data.trabajo.titulo : '',
         'f-autor':  data.trabajo && data.trabajo.autor  ? data.trabajo.autor  : '',
         'f-fecha':  data.trabajo && data.trabajo.fecha  ? data.trabajo.fecha  : '',
-        'f-profesor': data.trabajo && data.trabajo.prof ? data.trabajo.prof   : '',
+        
         'f-asignatura': data.trabajo && data.trabajo.asig ? data.trabajo.asig : '',
         'f-obs':    data.trabajo && data.trabajo.obs    ? data.trabajo.obs    : ''
       };
@@ -710,7 +710,7 @@ function cargarTrabajo(archivo){
         'f-titulo': data.trabajo && data.trabajo.titulo ? data.trabajo.titulo : '',
         'f-autor':  data.trabajo && data.trabajo.autor  ? data.trabajo.autor  : '',
         'f-fecha':  data.trabajo && data.trabajo.fecha  ? data.trabajo.fecha  : '',
-        'f-profesor': data.trabajo && data.trabajo.prof ? data.trabajo.prof   : '',
+        
         'f-asignatura': data.trabajo && data.trabajo.asig ? data.trabajo.asig : '',
         'f-obs':    data.trabajo && data.trabajo.obs    ? data.trabajo.obs    : ''
       };
