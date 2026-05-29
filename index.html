@@ -667,7 +667,7 @@ function cerrarSiOverlayTrabajos(e){
 function cargarListaTrabajos(){
   var lista = document.getElementById('trabajos-lista');
   lista.innerHTML = '<div class="trabajos-loading"><div class="spin"></div> <span>Cargando lista...</span></div>';
-  fetch(BASE_URL + 'trabajos.json?v=' + Date.now())
+  fetch(BASE_URL + 'trabajos.json?v=' + Date.now(), {cache: 'no-store'})
     .then(function(r){ return r.json(); })
     .then(function(trabajos){
       if(!trabajos || trabajos.length === 0){
@@ -698,7 +698,7 @@ function cargarListaTrabajos(){
 }
 
 function cargarTrabajo(archivo){
-  fetch(BASE_URL + archivo + '?v=' + Date.now())
+  fetch(BASE_URL + archivo + '?v=' + Date.now(), {cache: 'no-store'})
     .then(function(r){ return r.json(); })
     .then(function(data){
       console.log('JSON recibido:', JSON.stringify(data.trabajo)); // Limpiar estado anterior
