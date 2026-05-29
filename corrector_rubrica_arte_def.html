@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corrector · Rúbrica Unidad Didáctica de Arte</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f7f5f0;--surface:#fff;--surface2:#f0ede6;--border:#d8d3c8;
+  --text:#1a1814;--text2:#5a554e;--text3:#8a857c;
+  --accent:#8b5e3c;--accent-light:#f5ede4;--gold:#c49a6c;--gold-light:#f9f3ea;
+  --c4:#1a5c36;--c4b:#e8f5ed;--c3:#2c5282;--c3b:#ebf2fb;
+  --c2:#744210;--c2b:#fef3e2;--c1:#822727;--c1b:#fff0f0;
+  --r:6px;--rl:10px
+}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* HEADER */
+.hdr{background:var(--text);color:#f7f5f0;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;border-bottom:3px solid var(--gold)}
+.hdr h1{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:600}
+.hdr small{font-size:.75rem;color:var(--gold);display:block;letter-spacing:.07em;text-transform:uppercase}
+.nota-hdr{background:var(--gold);color:var(--text);font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:600;padding:.25rem .9rem;border-radius:var(--r);text-align:center;line-height:1.15}
+.nota-hdr span{font-family:'Source Sans 3',sans-serif;font-size:.6rem;display:block;text-transform:uppercase;letter-spacing:.06em;color:#5a4020}
+
+/* LAYOUT */
+.wrap{display:grid;grid-template-columns:1fr 340px;gap:1.5rem;max-width:1380px;margin:0 auto;padding:1.5rem 2rem;align-items:start}
+
+/* SIDEBAR */
+.sidebar{position:sticky;top:74px;display:flex;flex-direction:column;gap:1rem}
+.card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.card-hdr{background:var(--surface2);padding:.55rem 1rem;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text2);border-bottom:1px solid var(--border)}
+.card-body{padding:1rem}
+
+/* NOTA DISPLAY */
+.nota-big{text-align:center;padding:.75rem 0}
+.nota-num{font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:600;color:var(--accent);line-height:1}
+.nota-sub{font-size:.85rem;color:var(--text3)}
+.calif-badge{display:inline-block;margin-top:6px;padding:3px 14px;border-radius:20px;font-size:.85rem;font-weight:600}
+.cs{background:var(--c4b);color:var(--c4)}.cn{background:var(--c3b);color:var(--c3)}
+.ca{background:var(--c2b);color:var(--c2)}.ci{background:var(--c1b);color:var(--c1)}
+.cx{background:var(--surface2);color:var(--text3)}
+
+/* PROGRESS */
+.pb-wrap{background:var(--surface2);border-radius:4px;height:7px;margin:.7rem 0 .3rem;overflow:hidden}
+.pb-fill{height:100%;background:var(--gold);border-radius:4px;transition:width .3s}
+.pb-labels{display:flex;justify-content:space-between;font-size:.72rem;color:var(--text3)}
+
+/* DESGLOSE */
+.drow{display:flex;justify-content:space-between;align-items:center;padding:.3rem 0;font-size:.8rem;border-bottom:1px solid var(--border)}
+.drow:last-child{border:none}
+.ddot{width:8px;height:8px;border-radius:50%;margin-right:6px;flex-shrink:0;display:inline-block}
+.dname{color:var(--text2);flex:1;font-size:.75rem}
+.dval{font-weight:600}
+
+/* BOTONES */
+.btn{display:block;width:100%;padding:.6rem 1rem;font-family:'Source Sans 3',sans-serif;font-size:.85rem;font-weight:600;border-radius:var(--r);border:none;cursor:pointer;text-align:center;transition:all .15s;letter-spacing:.02em;margin-bottom:.4rem}
+.btn:last-child{margin-bottom:0}
+.btn-p{background:var(--accent);color:#fff}.btn-p:hover{background:#7a5232}
+.btn-s{background:var(--surface2);color:var(--text2);border:1.5px solid var(--border)}.btn-s:hover{background:var(--border)}
+.btn-d{background:transparent;color:var(--c1);border:1.5px solid var(--c1);font-size:.78rem;padding:.45rem 1rem}.btn-d:hover{background:var(--c1b)}
+
+/* SECCIONES MAIN */
+.section{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:1.25rem}
+.sec-hdr{background:var(--text);color:#f7f5f0;padding:.65rem 1rem;font-family:'Playfair Display',serif;font-size:.95rem;font-weight:600;display:flex;align-items:center;gap:.5rem}
+.sec-hdr .num{background:var(--gold);color:var(--text);width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Source Sans 3',sans-serif;font-size:.72rem;font-weight:700;flex-shrink:0}
+.sec-body{padding:1rem}
+
+/* CAMPOS TRABAJO */
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.fgrid .full{grid-column:1/-1}
+.flabel{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);font-weight:600;margin-bottom:3px}
+input[type=text],textarea{width:100%;padding:.45rem .7rem;border:1.5px solid var(--border);border-radius:var(--r);font-family:'Source Sans 3',sans-serif;font-size:.88rem;background:var(--surface);color:var(--text);transition:border-color .15s}
+input[type=text]:focus,textarea:focus{outline:none;border-color:var(--gold)}
+textarea{resize:vertical;min-height:65px}
+
+/* RUBRICA */
+.rub-head{display:grid;grid-template-columns:2.2fr .85fr .85fr .85fr .85fr 1.8fr;background:var(--text);color:#f7f5f0}
+.rh{padding:.5rem .4rem;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center}
+.rh:first-child{text-align:left;padding-left:.85rem}
+.rh.c4{background:var(--c4)}.rh.c3{background:var(--c3)}.rh.c2{background:var(--c2)}.rh.c1{background:var(--c1)}
+
+.blk-sep{background:var(--surface2);padding:.4rem .85rem;font-size:.68rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--text3);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+.rrow{display:grid;grid-template-columns:2.2fr .85fr .85fr .85fr .85fr 1.8fr;border-bottom:1px solid var(--border);background:var(--surface);transition:background .12s}
+.rrow:last-child{border-bottom:none}
+.rrow:hover{background:var(--gold-light)}
+.rrow.ok{background:var(--gold-light)}
+
+.ri{padding:.65rem .5rem .65rem .85rem;font-size:.85rem;display:flex;align-items:center;border-right:1px solid var(--border)}
+.rsc{display:flex;align-items:center;justify-content:center;border-right:1px solid var(--border);padding:.35rem}
+.sbtn{width:30px;height:30px;border-radius:50%;border:2px solid var(--border);background:transparent;cursor:pointer;font-size:.82rem;font-weight:700;color:var(--text3);transition:all .15s;display:flex;align-items:center;justify-content:center;font-family:'Source Sans 3',sans-serif}
+.sbtn:hover{border-color:var(--gold);color:var(--text);transform:scale(1.12)}
+.s4{background:var(--c4);border-color:var(--c4);color:#fff!important}
+.s3{background:var(--c3);border-color:var(--c3);color:#fff!important}
+.s2{background:var(--c2);border-color:var(--c2);color:#fff!important}
+.s1{background:var(--c1);border-color:var(--c1);color:#fff!important}
+
+.robs{padding:.25rem .4rem;display:flex;align-items:center}
+.robs input{padding:.25rem .45rem;font-size:.75rem;border:1.5px solid transparent;background:transparent;border-radius:var(--r)}
+.robs input:focus{background:var(--surface);border-color:var(--border)}
+
+/* PDF */
+.pdf-drop{border:2px dashed var(--border);border-radius:var(--rl);min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;cursor:pointer;padding:1.5rem;transition:all .2s;color:var(--text3)}
+.pdf-drop:hover{border-color:var(--gold);background:var(--gold-light)}
+.pdf-drop svg{opacity:.3}
+.pdf-drop p{font-size:.85rem;text-align:center}
+.pdf-drop p strong{display:block;color:var(--text2);margin-bottom:3px}
+#pdf-input{display:none}
+#pdf-frame{width:100%;height:calc(100vh - 220px);min-height:550px;border:none;border-radius:var(--rl);display:none}
+
+/* MODAL INFORME */
+.overlay{display:none;position:fixed;inset:0;background:rgba(26,24,20,.6);z-index:300;align-items:flex-start;justify-content:center;padding:2rem 1rem;overflow-y:auto}
+.overlay.open{display:flex}
+.modal{background:var(--surface);border-radius:var(--rl);max-width:720px;width:100%;padding:2rem;position:relative;margin:auto}
+.modal-x{position:absolute;top:1rem;right:1rem;background:var(--surface2);border:none;border-radius:50%;width:30px;height:30px;cursor:pointer;font-size:1rem;color:var(--text2);display:flex;align-items:center;justify-content:center}
+
+/* INFORME INTERIOR */
+.inf-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--accent);border-bottom:2px solid var(--gold);padding-bottom:.45rem;margin-bottom:1rem}
+.inf-meta{font-size:.84rem;color:var(--text2);margin-bottom:1.25rem;line-height:1.85}
+.inf-meta b{color:var(--text)}
+.inf-nota-box{background:var(--gold-light);border:1.5px solid var(--gold);border-radius:var(--rl);padding:.9rem 1.25rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.inf-nota-num{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:600;color:var(--accent)}
+.inf-table{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:1.25rem}
+.inf-table th{background:var(--text);color:#f7f5f0;padding:.45rem .7rem;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;text-align:left}
+.inf-table td{padding:.45rem .7rem;border-bottom:1px solid var(--border);vertical-align:middle}
+.inf-table tr:last-child td{border:none}
+.inf-table .blk-row td{background:var(--surface2);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);font-weight:700;padding:.35rem .7rem}
+.pill{display:inline-block;padding:2px 9px;border-radius:12px;font-weight:600;font-size:.77rem}
+.p4{background:var(--c4b);color:var(--c4)}.p3{background:var(--c3b);color:var(--c3)}
+.p2{background:var(--c2b);color:var(--c2)}.p1{background:var(--c1b);color:var(--c1)}
+.p0{background:var(--surface2);color:var(--text3)}
+.inf-obs-box{background:var(--surface2);border-radius:var(--r);padding:.85rem 1rem;font-size:.86rem;color:var(--text2);line-height:1.7}
+.inf-foot{margin-top:1.25rem;font-size:.72rem;color:var(--text3);border-top:1px solid var(--border);padding-top:.65rem}
+
+@media print{
+  .hdr,.sidebar,.pdf-drop,#pdf-frame,.modal-x,.btn{display:none!important}
+  .wrap{grid-template-columns:1fr;padding:0}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div>
+    <h1>Corrector · Rúbrica de Evaluación</h1>
+    <small>Unidad Didáctica de Arte</small>
+  </div>
+  <div class="nota-hdr">
+    <span>Nota</span>
+    <span id="hdr-nota">—</span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- COLUMNA PRINCIPAL -->
+  <main>
+
+    <!-- 1. DATOS DEL TRABAJO -->
+    <div class="section">
+      <div class="sec-hdr"><span class="num">1</span> Datos del trabajo evaluado</div>
+      <div class="sec-body">
+        <div class="fgrid">
+          <div class="full">
+            <div class="flabel">Título del trabajo</div>
+            <input type="text" id="f-titulo" placeholder="Ej. Situación de Aprendizaje: Operación FORUM">
+          </div>
+          <div>
+            <div class="flabel">Autor/a o grupo</div>
+            <input type="text" id="f-autor" placeholder="Apellidos, Nombre">
+          </div>
+          <div>
+            <div class="flabel">Fecha de evaluación</div>
+            <input type="text" id="f-fecha">
+          </div>
+          <div>
+            <div class="flabel">Docente evaluador/a</div>
+            <input type="text" id="f-profesor" placeholder="Nombre del profesor/a">
+          </div>
+          <div>
+            <div class="flabel">Asignatura / módulo</div>
+            <input type="text" id="f-asignatura" placeholder="Historia del Arte · Máster ESO y Bach.">
+          </div>
+          <div class="full">
+            <div class="flabel">Observaciones generales</div>
+            <textarea id="f-obs" placeholder="Valoración global, fortalezas, aspectos a mejorar…"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. RÚBRICA -->
+    <div class="section">
+      <div class="sec-hdr"><span class="num">2</span> Rúbrica de evaluación</div>
+      <div class="rub-head">
+        <div class="rh">Ítem a valorar</div>
+        <div class="rh c4">Excelente (4)</div>
+        <div class="rh c3">Notable (3)</div>
+        <div class="rh c2">Aceptable (2)</div>
+        <div class="rh c1">Insuficiente (1)</div>
+        <div class="rh">Observaciones</div>
+      </div>
+      <div id="rubrica-body"></div>
+    </div>
+
+    <!-- 3. PDF -->
+    <div class="section">
+      <div class="sec-hdr"><span class="num">3</span> Trabajo del alumno (PDF)</div>
+      <div class="sec-body">
+        <div id="pdf-drop" class="pdf-drop" onclick="document.getElementById('pdf-input').click()">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="12" y1="18" x2="12" y2="12"/>
+            <line x1="9" y1="15" x2="15" y2="15"/>
+          </svg>
+          <p><strong>Cargar PDF del trabajo</strong>Haz clic aquí o arrastra el archivo PDF</p>
+        </div>
+        <input type="file" id="pdf-input" accept="application/pdf">
+        <iframe id="pdf-frame"></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+
+    <div class="card">
+      <div class="card-hdr">Calificación global</div>
+      <div class="card-body">
+        <div class="nota-big">
+          <div class="nota-num" id="nota-num">—</div>
+          <div class="nota-sub">sobre 100</div>
+          <div id="nota-calif" class="calif-badge cx">Sin evaluar</div>
+        </div>
+        <div class="pb-wrap"><div class="pb-fill" id="pb" style="width:0%"></div></div>
+        <div class="pb-labels">
+          <span id="pb-left">0 ítems valorados</span>
+          <span id="pb-right">0 / 25</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">Desglose por bloque</div>
+      <div class="card-body" id="desglose" style="padding:.5rem 1rem"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">Acciones</div>
+      <div class="card-body">
+        <button class="btn btn-p" onclick="abrirInforme()">Ver informe completo</button>
+        <button class="btn btn-s" onclick="imprimirInforme()">Imprimir / Guardar PDF</button>
+        <button class="btn btn-s" onclick="exportarJSON()">Exportar JSON</button>
+        <button class="btn btn-s" onclick="document.getElementById('json-input').click()">Cargar evaluación (JSON)</button>
+        <input type="file" id="json-input" accept="application/json" style="display:none" onchange="cargarJSON(this)">
+        <button class="btn btn-d" onclick="reiniciar()">Reiniciar evaluación</button>
+      </div>
+    </div>
+
+  </aside>
+</div>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="cerrarSiOverlay(event)">
+  <div class="modal" id="modal">
+    <button class="modal-x" onclick="cerrarInforme()">✕</button>
+    <div id="informe-contenido"></div>
+  </div>
+</div>
+
+<script>
+var BLOQUES = [
+  {id:'ctx', label:'Contextualización y fundamentos curriculares', items:[
+    'Justificación y contextualización',
+    'Adecuación al currículo',
+    'Relación con el nivel educativo'
+  ]},
+  {id:'obj', label:'Objetivos y competencias', items:[
+    'Claridad de los objetivos didácticos',
+    'Relación objetivos–actividades',
+    'Competencias clave trabajadas'
+  ]},
+  {id:'con', label:'Contenidos y metodología', items:[
+    'Selección de contenidos',
+    'Equilibrio teoría / práctica',
+    'Metodología activa y participativa',
+    'Creatividad de la propuesta'
+  ]},
+  {id:'act', label:'Actividades y recursos', items:[
+    'Secuenciación de actividades',
+    'Variedad de actividades',
+    'Uso de recursos visuales y artísticos',
+    'Integración de TIC',
+    'Temporalización realista'
+  ]},
+  {id:'eva', label:'Evaluación', items:[
+    'Instrumentos de evaluación',
+    'Criterios de evaluación claros',
+    'Evaluación formativa'
+  ]},
+  {id:'div', label:'Atención a la diversidad e inclusión', items:[
+    'Atención a la diversidad',
+    'Inclusión y accesibilidad'
+  ]},
+  {id:'pre', label:'Presentación y calidad formal', items:[
+    'Innovación pedagógica',
+    'Presentación visual del trabajo',
+    'Corrección ortográfica y redacción',
+    'Bibliografía y referencias',
+    'Calidad artística y estética'
+  ]}
+];
+
+var PUNTOS = {};
+var OBS_ITEM = {};
+
+function totalItems(){
+  var t=0; BLOQUES.forEach(function(b){t+=b.items.length;}); return t;
+}
+
+function buildRubrica(){
+  var body = document.getElementById('rubrica-body');
+  body.innerHTML = '';
+  BLOQUES.forEach(function(bloque){
+    var sep = document.createElement('div');
+    sep.className = 'blk-sep';
+    sep.textContent = bloque.label;
+    body.appendChild(sep);
+    bloque.items.forEach(function(item, i){
+      var key = bloque.id+'_'+i;
+      var row = document.createElement('div');
+      row.className = 'rrow';
+      row.id = 'row_'+key;
+      var html = '<div class="ri">'+item+'</div>';
+      [4,3,2,1].forEach(function(v){
+        html += '<div class="rsc"><button class="sbtn" id="btn_'+key+'_'+v+'" onclick="setScore(\''+key+'\','+v+')">'+v+'</button></div>';
+      });
+      html += '<div class="robs"><input type="text" id="obs_'+key+'" placeholder="Obs…" oninput="setObs(\''+key+'\',this.value)"></div>';
+      row.innerHTML = html;
+      body.appendChild(row);
+    });
+  });
+}
+
+function setScore(key, val){
+  PUNTOS[key] = val;
+  [4,3,2,1].forEach(function(v){
+    var btn = document.getElementById('btn_'+key+'_'+v);
+    btn.className = 'sbtn' + (v===val ? ' s'+v : '');
+  });
+  document.getElementById('row_'+key).classList.add('ok');
+  updateStats();
+}
+
+function setObs(key, val){
+  OBS_ITEM[key] = val;
+}
+
+function updateStats(){
+  var total = totalItems();
+  var keys = Object.keys(PUNTOS);
+  var scored = keys.length;
+  var sum = 0;
+  keys.forEach(function(k){ sum += PUNTOS[k]; });
+  var nota = scored===0 ? null : Math.round((sum/(total*4))*100);
+
+  // header
+  document.getElementById('hdr-nota').textContent = nota!==null ? nota : '—';
+
+  // nota big
+  var nEl = document.getElementById('nota-num');
+  var cEl = document.getElementById('nota-calif');
+  if(nota===null){
+    nEl.textContent='—'; cEl.textContent='Sin evaluar'; cEl.className='calif-badge cx';
+  } else {
+    nEl.textContent = nota;
+    var txt,cls;
+    if(nota>=90){txt='Sobresaliente';cls='cs';}
+    else if(nota>=70){txt='Notable';cls='cn';}
+    else if(nota>=50){txt='Aprobado';cls='ca';}
+    else{txt='Suspenso';cls='ci';}
+    cEl.textContent=txt; cEl.className='calif-badge '+cls;
+  }
+
+  // progress
+  var pct = scored/total*100;
+  document.getElementById('pb').style.width = pct+'%';
+  document.getElementById('pb-left').textContent = scored+' ítems valorados';
+  document.getElementById('pb-right').textContent = scored+' / '+total;
+
+  // desglose
+  var dEl = document.getElementById('desglose');
+  dEl.innerHTML='';
+  BLOQUES.forEach(function(bloque){
+    var kk = bloque.items.map(function(_,i){return bloque.id+'_'+i;});
+    var vv = kk.map(function(k){return PUNTOS[k];}).filter(function(v){return v!==undefined;});
+    var row = document.createElement('div');
+    row.className='drow';
+    if(vv.length===0){
+      row.innerHTML='<span class="dname">'+bloque.label+'</span><span class="dval" style="color:var(--text3)">—</span>';
+    } else {
+      var bn = Math.round((vv.reduce(function(a,b){return a+b;},0)/(bloque.items.length*4))*100);
+      var col='#888';
+      if(bn>=90)col='var(--c4)'; else if(bn>=70)col='var(--c3)'; else if(bn>=50)col='var(--c2)'; else col='var(--c1)';
+      row.innerHTML='<span class="ddot" style="background:'+col+'"></span><span class="dname">'+bloque.label+'</span><span class="dval">'+bn+'</span>';
+    }
+    dEl.appendChild(row);
+  });
+}
+
+// PDF
+document.getElementById('pdf-input').addEventListener('change',function(e){
+  var f=e.target.files[0]; if(!f)return;
+  var url=URL.createObjectURL(f);
+  var fr=document.getElementById('pdf-frame');
+  document.getElementById('pdf-drop').style.display='none';
+  fr.src=url; fr.style.display='block';
+});
+var dz=document.getElementById('pdf-drop');
+dz.addEventListener('dragover',function(e){e.preventDefault();dz.style.background='var(--gold-light)';});
+dz.addEventListener('dragleave',function(){dz.style.background='';});
+dz.addEventListener('drop',function(e){
+  e.preventDefault();
+  var f=e.dataTransfer.files[0];
+  if(f&&f.type==='application/pdf'){
+    var url=URL.createObjectURL(f);
+    dz.style.display='none';
+    var fr=document.getElementById('pdf-frame');
+    fr.src=url; fr.style.display='block';
+  }
+});
+
+// INFORME
+function leerDatos(){
+  return {
+    titulo: document.getElementById('f-titulo').value || '(Sin título)',
+    autor:  document.getElementById('f-autor').value  || '(Sin especificar)',
+    fecha:  document.getElementById('f-fecha').value  || '—',
+    prof:   document.getElementById('f-profesor').value || '—',
+    asig:   document.getElementById('f-asignatura').value || '—',
+    obs:    document.getElementById('f-obs').value || ''
+  };
+}
+
+function generarHTML(){
+  var d = leerDatos();
+  var total = totalItems();
+  var keys = Object.keys(PUNTOS);
+  var scored = keys.length;
+  var sum = 0; keys.forEach(function(k){sum+=PUNTOS[k];});
+  var nota = scored===0 ? '—' : Math.round((sum/(total*4))*100);
+  var califTxt='—', califCls='p0';
+  if(typeof nota==='number'){
+    if(nota>=90){califTxt='Sobresaliente';califCls='p4';}
+    else if(nota>=70){califTxt='Notable';califCls='p3';}
+    else if(nota>=50){califTxt='Aprobado';califCls='p2';}
+    else{califTxt='Suspenso';califCls='p1';}
+  }
+
+  var filas='';
+  BLOQUES.forEach(function(bloque){
+    filas+='<tr class="blk-row"><td colspan="4">'+bloque.label+'</td></tr>';
+    bloque.items.forEach(function(item,i){
+      var key=bloque.id+'_'+i;
+      var v=PUNTOS[key];
+      var obsT=OBS_ITEM[key]||'';
+      var pillCls='p0', pillTxt='—';
+      if(v){pillCls='p'+v; pillTxt=['','Insuficiente','Aceptable','Notable','Excelente'][v]+' ('+v+')';}
+      filas+='<tr><td>'+item+'</td>'
+        +'<td style="text-align:center"><span class="pill '+pillCls+'">'+pillTxt+'</span></td>'
+        +'<td style="text-align:center;letter-spacing:2px">'+(v?'●'.repeat(v)+'○'.repeat(4-v):'—')+'</td>'
+        +'<td style="color:var(--text3);font-size:.77rem">'+obsT+'</td></tr>';
+    });
+  });
+
+  var obsHtml = d.obs
+    ? '<div style="font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--text3);margin-bottom:.45rem">Observaciones generales</div><div class="inf-obs-box">'+d.obs+'</div>'
+    : '';
+
+  return '<div class="inf-title">Informe de Evaluación</div>'
+    +'<div class="inf-meta">'
+    +'<b>Trabajo:</b> '+d.titulo+'<br>'
+    +'<b>Autor/a:</b> '+d.autor+'<br>'
+    +'<b>Asignatura:</b> '+d.asig+'<br>'
+    +'<b>Evaluado por:</b> '+d.prof+' &nbsp;·&nbsp; <b>Fecha:</b> '+d.fecha
+    +'</div>'
+    +'<div class="inf-nota-box">'
+    +'<div><div style="font-size:.72rem;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px">Calificación final</div>'
+    +'<span class="inf-nota-num">'+nota+'</span><span style="font-size:1rem;color:var(--text3)"> / 100</span>'
+    +'<div style="margin-top:6px"><span class="pill '+califCls+'">'+califTxt+'</span></div></div>'
+    +'<div style="font-size:.8rem;color:var(--text2);text-align:right">'+scored+' de '+total+' ítems evaluados<br>Puntos: '+sum+' / '+(total*4)+'</div>'
+    +'</div>'
+    +'<table class="inf-table">'
+    +'<thead><tr><th>Ítem</th><th style="text-align:center">Valoración</th><th style="text-align:center">Nivel</th><th>Obs.</th></tr></thead>'
+    +'<tbody>'+filas+'</tbody>'
+    +'</table>'
+    +obsHtml
+    +'<div class="inf-foot">Documento generado · Rúbrica de Evaluación · Unidad Didáctica de Arte</div>';
+}
+
+function abrirInforme(){
+  document.getElementById('informe-contenido').innerHTML = generarHTML();
+  document.getElementById('overlay').classList.add('open');
+}
+function cerrarInforme(){
+  document.getElementById('overlay').classList.remove('open');
+}
+function cerrarSiOverlay(e){
+  if(e.target===document.getElementById('overlay')) cerrarInforme();
+}
+function imprimirInforme(){
+  document.getElementById('informe-contenido').innerHTML = generarHTML();
+  document.getElementById('overlay').classList.add('open');
+  setTimeout(function(){window.print();},300);
+}
+
+function exportarJSON(){
+  var d=leerDatos();
+  var total=totalItems();
+  var keys=Object.keys(PUNTOS);
+  var sum=0; keys.forEach(function(k){sum+=PUNTOS[k];});
+  var data={
+    trabajo:d,
+    puntuaciones:PUNTOS,
+    observaciones_item:OBS_ITEM,
+    resumen:{
+      total_items:total,
+      items_valorados:keys.length,
+      suma:sum,
+      max:total*4,
+      nota:keys.length===0?null:Math.round((sum/(total*4))*100)
+    }
+  };
+  var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  var a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='evaluacion_'+(d.autor||'trabajo').replace(/\s+/g,'_')+'.json';
+  a.click();
+}
+
+function reiniciar(){
+  if(!confirm('¿Reiniciar toda la evaluación? Se perderán las puntuaciones.')) return;
+  PUNTOS={};OBS_ITEM={};
+  buildRubrica();
+  document.getElementById('f-titulo').value='';
+  document.getElementById('f-autor').value='';
+  document.getElementById('f-profesor').value='';
+  document.getElementById('f-asignatura').value='';
+  document.getElementById('f-obs').value='';
+  document.getElementById('f-fecha').value=new Date().toLocaleDateString('es-ES');
+  updateStats();
+}
+
+// CARGAR JSON
+function cargarJSON(input){
+  var file = input.files[0]; if(!file) return;
+  var reader = new FileReader();
+  reader.onload = function(e){
+    try {
+      var data = JSON.parse(e.target.result);
+
+      // 1. Datos del trabajo — escribir directamente en los inputs
+      var mapa = {
+        'f-titulo': data.trabajo && data.trabajo.titulo ? data.trabajo.titulo : '',
+        'f-autor':  data.trabajo && data.trabajo.autor  ? data.trabajo.autor  : '',
+        'f-fecha':  data.trabajo && data.trabajo.fecha  ? data.trabajo.fecha  : '',
+        'f-profesor': data.trabajo && data.trabajo.prof ? data.trabajo.prof   : '',
+        'f-asignatura': data.trabajo && data.trabajo.asig ? data.trabajo.asig : '',
+        'f-obs':    data.trabajo && data.trabajo.obs    ? data.trabajo.obs    : ''
+      };
+      Object.keys(mapa).forEach(function(id){
+        var el = document.getElementById(id);
+        if(el) el.value = mapa[id];
+      });
+
+      // 2. Limpiar puntuaciones anteriores
+      Object.keys(PUNTOS).forEach(function(k){ delete PUNTOS[k]; });
+      Object.keys(OBS_ITEM).forEach(function(k){ delete OBS_ITEM[k]; });
+
+      // 3. Cargar puntuaciones en la variable global Y en los botones
+      if(data.puntuaciones){
+        Object.keys(data.puntuaciones).forEach(function(key){
+          var v = parseInt(data.puntuaciones[key]);
+          if(v >= 1 && v <= 4){
+            PUNTOS[key] = v;
+            // Actualizar botones visualmente
+            [4,3,2,1].forEach(function(n){
+              var btn = document.getElementById('btn_'+key+'_'+n);
+              if(btn) btn.className = 'sbtn' + (n === v ? ' s'+n : '');
+            });
+            var row = document.getElementById('row_'+key);
+            if(row) row.classList.add('ok');
+          }
+        });
+      }
+
+      // 4. Cargar observaciones por ítem
+      if(data.observaciones_item){
+        Object.keys(data.observaciones_item).forEach(function(key){
+          var obs = data.observaciones_item[key];
+          OBS_ITEM[key] = obs;
+          var el = document.getElementById('obs_'+key);
+          if(el) el.value = obs;
+        });
+      }
+
+      // 5. Actualizar estadísticas
+      updateStats();
+
+      alert('Evaluación cargada: ' + Object.keys(PUNTOS).length + ' ítems con puntuación.');
+    } catch(err){
+      alert('Error al leer el JSON: ' + err.message);
+    }
+    input.value = '';
+  };
+  reader.readAsText(file);
+}
+
+// INIT
+buildRubrica();
+updateStats();
+document.getElementById('f-fecha').value = new Date().toLocaleDateString('es-ES');
+</script>
+</body>
+</html>
