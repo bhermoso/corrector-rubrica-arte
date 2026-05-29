@@ -1,0 +1,53 @@
+{
+  "trabajo": {
+    "titulo": "El Arte Griego: los cimientos del mundo occidental",
+    "autor": "Miranda Soro Pérez, Pablo Saldaña Ruiz de Villa, Noa Pino Cebreiro",
+    "fecha": "29/05/2026",
+    "prof": "DJ Quesada Morales",
+    "asig": "Complementación Curricular Historia del Arte · Máster ESO y Bach. · Universidad de Valladolid",
+    "obs": "Propuesta sólida, creativa y bien orientada a 1º ESO, con el mosaico-collage como aprendizaje-servicio como elemento más original. La metodología está bien fundamentada y la variedad de actividades es notable. Los puntos más débiles son la atención a la diversidad, tratada de forma genérica, la temporalización de la salida a Ampurias que resulta inviable desde Valladolid, y una bibliografía algo escasa."
+  },
+  "puntuaciones": {
+    "ctx_0": 3, "ctx_1": 3, "ctx_2": 4,
+    "obj_0": 3, "obj_1": 3, "obj_2": 3,
+    "con_0": 3, "con_1": 4, "con_2": 4, "con_3": 4,
+    "act_0": 3, "act_1": 4, "act_2": 4, "act_3": 4, "act_4": 2,
+    "eva_0": 3, "eva_1": 3, "eva_2": 3,
+    "div_0": 2, "div_1": 2,
+    "pre_0": 4, "pre_1": 3, "pre_2": 3, "pre_3": 3, "pre_4": 3
+  },
+  "observaciones_item": {
+    "ctx_0": "Marco normativo correcto (LOMLOE, RD 217/2022, Decreto 39/2022 CyL); la contextualización es funcional pero la justificación temática es algo genérica.",
+    "ctx_1": "Tabla curricular con CE.1, CE.6, CE.7 y CE.9 presentes, pero los indicadores de logro son escasos y la relación contenidos-criterios podría estar más desarrollada.",
+    "ctx_2": "Propuesta muy bien ajustada a 1º ESO: mosaico-collage con material reciclable, cómic, lluvia de ideas, visita virtual. Actividades accesibles y motivadoras.",
+    "obj_0": "Nueve objetivos didácticos bien redactados, aunque algunos son demasiado genéricos y no siempre se vinculan explícitamente con las actividades.",
+    "obj_1": "La relación es visible en la tabla curricular pero no se explicita sistemáticamente qué objetivo cubre cada actividad.",
+    "obj_2": "CCL, CD, CPSAA y CCEC trabajadas, aunque la justificación en el apartado de contenidos transversales es más descriptiva que analítica.",
+    "con_0": "Contenidos pertinentes para 1º ESO; el panteón griego, la Acrópolis, la colonización y el análisis de obra están bien seleccionados, aunque la secuencia temática podría ser más progresiva.",
+    "con_1": "Excelente equilibrio: lluvia de ideas + vídeo + diario + visita a Ampurias + visita virtual + cómic + comentario + mosaico. La práctica predomina sobre la teoría.",
+    "con_2": "ABP, aprendizaje colaborativo, aprendizaje por servicio y aprendizaje por descubrimiento, todos fundamentados con referencias bibliográficas específicas.",
+    "con_3": "El mosaico-collage con material reciclable expuesto en los pasillos como aprendizaje-servicio, la salida a Ampurias y el cómic mudo son ideas originales y bien articuladas.",
+    "act_0": "10 sesiones con cronograma detallado; la progresión es lógica aunque la salida a Ampurias desde Valladolid presenta un problema logístico no justificado.",
+    "act_1": "Padlet, vídeo, diario, salida arqueológica, visita virtual 360°, cómic, comentario de obra, presentación oral, mosaico reciclado. Repertorio muy variado.",
+    "act_2": "Lista detallada de obras de escultura y arquitectura griegas con autoría, fecha y localización; vídeo documental, tour virtual 360° y modelos 3D del Partenón.",
+    "act_3": "Padlet, vídeo YouTube, tour virtual 360° de la Acrópolis, modelos 3D en Sketchfab, CoRubrics para coevaluación, repositorios digitales especializados.",
+    "act_4": "El cronograma es detallado pero la salida a Ampurias (Girona) desde Valladolid implica un viaje de más de 4 horas que hace inviable la actividad en una sola sesión.",
+    "eva_0": "Diario de aprendizaje, dossier, lista de cotejo, CoRubrics y rúbrica. Variedad correcta aunque la lista de cotejo de la actividad 3 no se desarrolla.",
+    "eva_1": "Tabla de evaluación con pesos porcentuales definidos (15%+15%+15%+15%+40%) y agentes evaluadores. Falta mayor concreción en los indicadores de cada instrumento.",
+    "eva_2": "Combina autoevaluación, heteroevaluación y coevaluación pero no explicita momentos de retroalimentación continua durante el proceso.",
+    "div_0": "Se menciona DUA y adaptaciones curriculares de forma genérica; no se desarrollan medidas concretas para perfiles específicos.",
+    "div_1": "Se menciona la accesibilidad de espacios sin concretarla; la perspectiva de género aparece en los objetivos de etapa pero no se trabaja explícitamente en las actividades.",
+    "pre_0": "La combinación de aprendizaje-servicio (mosaico en pasillos del instituto), salida arqueológica real, tour virtual 360° y cómic mudo es una propuesta genuinamente innovadora.",
+    "pre_1": "Documento bien estructurado con tablas claras; la codificación con caracteres extraños es artefacto de extracción del PDF, no del original.",
+    "pre_2": "Redacción fluida y correcta; los caracteres extraños son artefactos del PDF. Se detecta alguna frase larga y alguna repetición estructural entre apartados.",
+    "pre_3": "Cuatro referencias en formato APA con DOI; pertinentes pero escasas para un trabajo de este nivel. Falta bibliografía específica de didáctica del arte.",
+    "pre_4": "El documento es sobrio; la propuesta tiene alta calidad estética en el diseño del mosaico-collage, aunque el documento escrito no lo refleja visualmente."
+  },
+  "resumen": {
+    "total_items": 25,
+    "items_valorados": 25,
+    "suma": 80,
+    "max": 100,
+    "nota": 80
+  }
+}
