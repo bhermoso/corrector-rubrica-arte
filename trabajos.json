@@ -2,7 +2,15 @@
   {
     "archivo": "evaluacion_Gago_Quintana_Rodriguez.json",
     "titulo": "Situación de Aprendizaje: Operación FORUM",
-    "autor": "Iñigo Gago García, Claudia Quintana Martínez, Daniel Rodríguez Giraldo",
+    "autor": "Gago García, Quintana Martínez, Rodríguez Giraldo",
+    "fecha": "29/05/2026",
+    "nota": 88,
+    "calificacion": "Notable"
+  },
+  {
+    "archivo": "evaluacion_Alvarez_Casas_Gregores.json",
+    "titulo": "El Movimiento Art Decó en las Aulas de 2º Bachillerato",
+    "autor": "Álvarez Garrido, Casas Rodríguez, Gregores González",
     "fecha": "29/05/2026",
     "nota": 88,
     "calificacion": "Notable"
