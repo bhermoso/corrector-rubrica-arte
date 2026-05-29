@@ -14,5 +14,13 @@
     "fecha": "29/05/2026",
     "nota": 88,
     "calificacion": "Notable"
+  },
+  {
+    "archivo": "evaluacion_Perez_Pintos_Sanz.json",
+    "titulo": "El tenebrismo del Barroco",
+    "autor": "Perez, Pintos, Sanz, Tejo Ruiz",
+    "fecha": "29/05/2026",
+    "nota": 87,
+    "calificacion": "Notable"
   }
 ]
