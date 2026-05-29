@@ -1,0 +1,53 @@
+{
+  "trabajo": {
+    "titulo": "El legado artístico de Al-Ándalus",
+    "autor": "Iñaki Gutiérrez Esteban, Héctor Javier Miranda Crespo, Fernando Herrero de Tejada Tamayo",
+    "fecha": "29/05/2026",
+    "prof": "DJ Quesada Morales",
+    "asig": "Complementación Curricular Historia del Arte · Máster ESO y Bach. · Universidad de Valladolid",
+    "obs": "Propuesta sólida y bien ejecutada, con una atención a la diversidad excepcional — la tabla DUA actividad por actividad con barreras y medidas concretas es el mejor ejemplo visto en el conjunto. Destacan la creatividad del taller de mosaicos, la maqueta tridimensional y la exposición como visita guiada simulada. Los puntos más débiles son la tabla curricular aparentemente vacía, la bibliografía educativa ausente y la temporalización algo ajustada para la complejidad del producto final."
+  },
+  "puntuaciones": {
+    "ctx_0": 4, "ctx_1": 2, "ctx_2": 4,
+    "obj_0": 3, "obj_1": 3, "obj_2": 3,
+    "con_0": 4, "con_1": 4, "con_2": 4, "con_3": 4,
+    "act_0": 3, "act_1": 4, "act_2": 4, "act_3": 4, "act_4": 3,
+    "eva_0": 4, "eva_1": 4, "eva_2": 3,
+    "div_0": 4, "div_1": 4,
+    "pre_0": 4, "pre_1": 3, "pre_2": 3, "pre_3": 2, "pre_4": 3
+  },
+  "observaciones_item": {
+    "ctx_0": "Justificación temática sólida con enfoque en el arte andaluz como expresión cultural compleja; contextualización en IES Emilio Ferrari y conexión con PAU.",
+    "ctx_1": "La tabla curricular aparece referenciada pero el apartado de fundamentación curricular aparece vacío en el documento extraído del PDF.",
+    "ctx_2": "Propuesta muy ajustada a 2º Bachillerato: comentario PAU, maqueta, exposición oral y vocabulario técnico específico (ataurique, mocárabe, sebka).",
+    "obj_0": "Objetivos bien orientados al análisis crítico y competencial, aunque redactados de forma prolija y sin numeración estructurada que facilite su lectura.",
+    "obj_1": "La relación es implícita a través de los indicadores de logro por actividad; podría ser más explícita con una tabla de correspondencia.",
+    "obj_2": "CCL, CD, CPSAA y CCEC presentes en la fundamentación; la justificación es más descriptiva que analítica en cuanto a descriptores operativos.",
+    "con_0": "Alhambra, Mezquita de Córdoba, Medina Azahara, azulejos y mosaicos geométricos; selección pertinente y bien delimitada para 2º Bachillerato.",
+    "con_1": "Excelente equilibrio: lluvia de ideas + investigación digital + taller de mosaicos + comentario PAU + maqueta + exposición oral. La práctica es protagonista.",
+    "con_2": "ABP como eje, aprendizaje por descubrimiento, cooperativo e interdisciplinar (Plástica, Matemáticas, Informática). Bien fundamentado aunque con pocas referencias bibliográficas.",
+    "con_3": "'El taller del Alarife' con mosaicos geométricos, la maqueta tridimensional y la exposición como visita guiada simulada son ideas originales y bien articuladas.",
+    "act_0": "6 sesiones en enero con fechas concretas; la secuencia es lógica aunque algo ajustada para cubrir todos los contenidos con profundidad.",
+    "act_1": "Lluvia de ideas, investigación digital, taller artístico, comentario PAU, maqueta tridimensional y exposición oral. Repertorio muy variado y bien distribuido.",
+    "act_2": "Imágenes de monumentos andalusíes, documentales, visitas virtuales, GeoGebra para patrones geométricos y materiales físicos para maqueta y mosaicos.",
+    "act_3": "Canva, Genially, GeoGebra, SketchUp/Tinkercad como alternativa DUA, recursos web supervisados, pizarra digital y formulario online de valoración.",
+    "act_4": "Fechas concretas en enero; razonable para 2º Bachillerato aunque 6 sesiones es ajustado para la complejidad de la maqueta + informe + exposición.",
+    "eva_0": "Observación sistemática, rúbrica de mosaico, comentario PAU, rúbrica de maqueta + informe, rúbrica de exposición oral y encuesta de valoración.",
+    "eva_1": "Distribución detallada: evaluación inicial 10%, continua 20%, final 70% con desglose por actividad y peso sobre nota final. Rúbrica con cuatro niveles.",
+    "eva_2": "Cuaderno del profesor e indicadores de logro por actividad; la retroalimentación explícita al alumno durante el proceso no se concreta suficientemente.",
+    "div_0": "Tabla DUA por actividad con barrera detectada, medida concreta y principio DUA aplicado. Coordinación con orientación del centro. Excepcional nivel de concreción.",
+    "div_1": "Alternativas digitales para dificultades motrices, textos ampliados, tarjetas anónimas para ansiedad oral, fuentes adaptadas. DUA genuinamente implementado.",
+    "pre_0": "'El taller del Alarife', la maqueta con materiales del centro, la exposición como visita guiada simulada y la encuesta bidireccional son propuestas genuinamente innovadoras.",
+    "pre_1": "Documento bien estructurado con tablas de recursos, DUA y evaluación; la tabla de fundamentación curricular aparece vacía en la extracción del PDF.",
+    "pre_2": "Redacción fluida con vocabulario técnico preciso; se detectan algunas erratas ('LOMLE' en lugar de LOMLOE) y frases algo largas.",
+    "pre_3": "No se observa bibliografía educativa ni de didáctica del arte en el texto extraído; solo referencias implícitas a la normativa.",
+    "pre_4": "Documento funcional con tablas bien organizadas; la propuesta tiene alta calidad estética en el diseño de actividades aunque el documento escrito es sobrio."
+  },
+  "resumen": {
+    "total_items": 25,
+    "items_valorados": 25,
+    "suma": 85,
+    "max": 100,
+    "nota": 85
+  }
+}
