@@ -1,0 +1,53 @@
+{
+  "trabajo": {
+    "titulo": "El Renacimiento: vuelta a lo clásico",
+    "autor": "Ángel Baticón Vicente, Carolina Francisco García, Mario Gutiérrez Pantoja, Lorena Martínez Fernández",
+    "fecha": "29/05/2026",
+    "prof": "DJ Quesada Morales",
+    "asig": "Complementación Curricular Historia del Arte · Máster ESO y Bach. · Universidad de Valladolid",
+    "obs": "Trabajo sólido y bien estructurado, con el patrimonio renacentista de Valladolid como eje vertebrador que le da coherencia y originalidad. Destacan las actividades creativas, el sistema de evaluación muy detallado con cinco rúbricas en anexos y la presentación visual del documento. Los puntos más débiles son la atención a la diversidad, tratada de forma genérica, la escasa bibliografía educativa y la fundamentación metodológica algo superficial."
+  },
+  "puntuaciones": {
+    "ctx_0": 4, "ctx_1": 4, "ctx_2": 4,
+    "obj_0": 3, "obj_1": 3, "obj_2": 4,
+    "con_0": 4, "con_1": 4, "con_2": 3, "con_3": 4,
+    "act_0": 4, "act_1": 4, "act_2": 3, "act_3": 4, "act_4": 4,
+    "eva_0": 4, "eva_1": 4, "eva_2": 4,
+    "div_0": 2, "div_1": 2,
+    "pre_0": 4, "pre_1": 4, "pre_2": 3, "pre_3": 3, "pre_4": 4
+  },
+  "observaciones_item": {
+    "ctx_0": "Marco normativo completo (LOMLOE, RD 243/2022, Decreto 40/2022 CyL); justificación temática sólida centrada en el patrimonio renacentista de Valladolid como eje vertebrador.",
+    "ctx_1": "Tabla curricular detallada con CE.1-CE.6, criterios de evaluación y descriptores operativos correctamente alineados con Historia del Arte de 2º Bachillerato.",
+    "ctx_2": "Propuesta bien ajustada a 2º Bachillerato: análisis comparativo, comentario de obra, debate argumentativo y mapa digital son actividades pertinentes para el nivel.",
+    "obj_0": "Ocho objetivos bien redactados con orientación competencial; algunos son genéricos y no todos se vinculan explícitamente con las actividades concretas.",
+    "obj_1": "La tabla curricular establece la relación criterios-actividades, pero la correspondencia directa entre objetivos didácticos y cada actividad podría ser más explícita.",
+    "obj_2": "CCL, CD, CPSAA, CC y CCEC integradas con descriptores operativos concretos en la tabla curricular.",
+    "con_0": "Contenidos de los bloques A y D bien seleccionados; el eje Valladolid-Renacimiento permite trabajar arte como poder, patrimonio y análisis formal de forma coherente.",
+    "con_1": "Cuatro fases bien diferenciadas: contextualización, investigación, debate/aplicación y síntesis. La práctica predomina con actividades como 'Detectives del arte' o la salida de campo.",
+    "con_2": "ABP mencionado y aplicado en el producto final; sin embargo la fundamentación teórica metodológica es escasa — solo tres referencias educativas en bibliografía.",
+    "con_3": "'Detectives del arte', 'El error del historiador', 'Juicio al patrimonio' y el mapa interactivo del Renacimiento en Valladolid son actividades originales y bien articuladas.",
+    "act_0": "Seis semanas con cuatro fases progresivas bien definidas; cronograma general de 11 SA que ubica perfectamente esta en el segundo trimestre.",
+    "act_1": "Análisis comparativo, corrección de errores, mapa mental, debate, salida de campo, reescritura y mapa digital. Repertorio muy variado y bien distribuido.",
+    "act_2": "Se mencionan dossiers de imágenes, fotografías históricas y planos urbanos, pero no se listan obras concretas con autoría y localización como en otros trabajos.",
+    "act_3": "Google Earth Pro, aplicaciones de diseño digital, Kahoot, Google Forms, pizarra digital, CoRubrics y herramientas de cartografía interactiva para el producto final.",
+    "act_4": "Seis semanas bien distribuidas en el segundo trimestre; la salida de campo es a Valladolid, perfectamente viable. Cronograma anual de 11 SA coherente.",
+    "eva_0": "Lista de control, registro anecdótico, rúbricas analíticas, dossier digital, escala de valoración oral y rúbrica del producto final. Cinco anexos con rúbricas detalladas.",
+    "eva_1": "Pesos explícitos: producto final 50%, actividades 20%, coevaluación 20%, expresión oral 10%. Evaluación bidireccional con cuestionario de satisfacción al alumnado.",
+    "eva_2": "Tres momentos: diagnóstica (Kahoot inicial), formativa continua con retroalimentación y sumativa final. Autoevaluación, coevaluación y heteroevaluación integradas.",
+    "div_0": "Se menciona el DUA en el apartado de evaluación pero no se desarrollan medidas concretas de adaptación para perfiles específicos en las actividades.",
+    "div_1": "No se desarrolla explícitamente; la perspectiva de género aparece en los objetivos de etapa pero no se trabaja en las actividades concretas.",
+    "pre_0": "'El error del historiador', 'Juicio al patrimonio' y el mapa interactivo del Renacimiento en Valladolid como producto final son propuestas genuinamente innovadoras.",
+    "pre_1": "Documento bien estructurado con tablas curriculares claras, cronograma visual, cinco anexos con rúbricas detalladas y tabla de 11 SA con reto y producto final.",
+    "pre_2": "Redacción fluida y correcta en general; se detectan algunas erratas menores y la referencia 'Ley Orgnica 3/202' es un error tipográfico.",
+    "pre_3": "Referencias legislativas completas; bibliografía educativa escasa (3 referencias). Falta bibliografía específica de Historia del Arte y didáctica del arte.",
+    "pre_4": "Documento visualmente cuidado con tablas bien diseñadas, cinco rúbricas en anexos con estructura clara y cronograma visual de las 11 SA."
+  },
+  "resumen": {
+    "total_items": 25,
+    "items_valorados": 25,
+    "suma": 88,
+    "max": 100,
+    "nota": 88
+  }
+}

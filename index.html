@@ -653,9 +653,11 @@ var BASE_URL = (function(){
   return loc.substring(0, loc.lastIndexOf('/') + 1);
 })();
 
+var CURSO_ACTUAL = null;
+
 function abrirTrabajos(){
   document.getElementById('overlay-trabajos').classList.add('open');
-  cargarListaTrabajos();
+  cargarCursos();
 }
 function cerrarTrabajos(){
   document.getElementById('overlay-trabajos').classList.remove('open');
@@ -664,9 +666,75 @@ function cerrarSiOverlayTrabajos(e){
   if(e.target===document.getElementById('overlay-trabajos')) cerrarTrabajos();
 }
 
-function cargarListaTrabajos(){
+function cargarCursos(){
   var lista = document.getElementById('trabajos-lista');
-  lista.innerHTML = '<div class="trabajos-loading"><div class="spin"></div> <span>Cargando lista...</span></div>';
+  lista.innerHTML = '<div class="trabajos-loading"><div class="spin"></div> <span>Cargando cursos...</span></div>';
+  fetch(BASE_URL + 'cursos.json?v=' + Date.now(), {cache: 'no-store'})
+    .then(function(r){ return r.json(); })
+    .then(function(cursos){
+      if(!cursos || cursos.length === 0){
+        lista.innerHTML = '<div class="trabajos-empty">No hay cursos disponibles.</div>';
+        return;
+      }
+      // Si solo hay un curso, cargarlo directamente
+      if(cursos.length === 1){
+        cargarListaTrabajos(cursos[0]);
+        return;
+      }
+      lista.innerHTML = '<div style="margin-bottom:.75rem;font-size:.8rem;color:var(--text3)">Selecciona un curso académico:</div>';
+      cursos.forEach(function(c){
+        var item = document.createElement('div');
+        item.className = 'trabajo-item';
+        item.innerHTML = '<div class="trabajo-info"><div class="trabajo-titulo" style="font-size:1rem">' + c.label + '</div></div>'
+          + '<div style="color:var(--text3);font-size:.8rem">▶</div>';
+        item.onclick = function(){ cargarListaTrabajos(c); };
+        lista.appendChild(item);
+      });
+    })
+    .catch(function(){
+      // Fallback: intentar trabajos.json raíz (compatibilidad)
+      cargarListaTrabajosFallback();
+    });
+}
+
+function cargarListaTrabajos(curso){
+  CURSO_ACTUAL = curso;
+  var lista = document.getElementById('trabajos-lista');
+  lista.innerHTML = '<div class="trabajos-loading"><div class="spin"></div> <span>Cargando trabajos...</span></div>';
+  fetch(BASE_URL + curso.carpeta + '/trabajos.json?v=' + Date.now(), {cache: 'no-store'})
+    .then(function(r){ return r.json(); })
+    .then(function(trabajos){
+      if(!trabajos || trabajos.length === 0){
+        lista.innerHTML = '<div class="trabajos-empty">No hay trabajos evaluados en este curso.</div>';
+        return;
+      }
+      lista.innerHTML = '<div style="margin-bottom:.75rem;font-size:.8rem;color:var(--text3);display:flex;align-items:center;gap:.5rem">'
+        + '<button onclick="cargarCursos()" style="background:none;border:none;cursor:pointer;color:var(--accent);font-size:.85rem;padding:0">← Cursos</button>'
+        + '<span>/ ' + curso.label + '</span></div>';
+      trabajos.forEach(function(t){
+        var item = document.createElement('div');
+        item.className = 'trabajo-item';
+        var califCls = t.nota>=90?'cs':t.nota>=70?'cn':t.nota>=50?'ca':'ci';
+        item.innerHTML = '<div class="trabajo-info">'
+          + '<div class="trabajo-titulo">' + t.titulo + '</div>'
+          + '<div class="trabajo-autor">' + t.autor + '</div>'
+          + '<div class="trabajo-fecha">' + t.fecha + '</div>'
+          + '</div>'
+          + '<div class="trabajo-nota">'
+          + '<div class="trabajo-nota-num">' + t.nota + '</div>'
+          + '<span class="trabajo-nota-calif calif-badge ' + califCls + '" style="display:inline-block;margin-top:3px;padding:2px 8px;border-radius:12px;font-size:.68rem;font-weight:600">' + t.calificacion + '</span>'
+          + '</div>';
+        item.onclick = function(){ cargarTrabajo(curso.carpeta + '/' + t.archivo); };
+        lista.appendChild(item);
+      });
+    })
+    .catch(function(){
+      lista.innerHTML = '<div class="trabajos-empty">No se pudo cargar la lista de trabajos.</div>';
+    });
+}
+
+function cargarListaTrabajosFallback(){
+  var lista = document.getElementById('trabajos-lista');
   fetch(BASE_URL + 'trabajos.json?v=' + Date.now(), {cache: 'no-store'})
     .then(function(r){ return r.json(); })
     .then(function(trabajos){
@@ -693,7 +761,7 @@ function cargarListaTrabajos(){
       });
     })
     .catch(function(){
-      lista.innerHTML = '<div class="trabajos-empty">No se pudo cargar la lista. Comprueba que <b>trabajos.json</b> está en la misma carpeta.</div>';
+      lista.innerHTML = '<div class="trabajos-empty">No se pudo cargar la lista.</div>';
     });
 }
 
