@@ -16,9 +16,57 @@
     "calificacion": "Notable"
   },
   {
+    "archivo": "evaluacion_Hernandez_Rodriguez_Sanz_Travieso.json",
+    "titulo": "Arte sacro postridentino: escultura barroca española. Una situación de aprendizaje para segundo de la ESO de Geografía e Historia",
+    "autor": "David Hernández Jiménez, Hugo Rodríguez Mancebo, Lucas Sanz Poza, Ángel Travieso Melero",
+    "fecha": "29/05/2026",
+    "nota": 99,
+    "calificacion": "Sobresaliente"
+  },
+  {
+    "archivo": "evaluacion_Soro_Saldana_Pino.json",
+    "titulo": "El Arte Griego: los cimientos del mundo occidental",
+    "autor": "Miranda Soro Pérez, Pablo Saldaña Ruiz de Villa, Noa Pino Cebreiro",
+    "fecha": "29/05/2026",
+    "nota": 80,
+    "calificacion": "Notable"
+  },
+  {
+    "archivo": "evaluacion_Baticon_Francisco_Gutierrez_Martinez.json",
+    "titulo": "El Renacimiento: vuelta a lo clásico",
+    "autor": "Ángel Baticón Vicente, Carolina Francisco García, Mario Gutiérrez Pantoja, Lorena Martínez Fernández",
+    "fecha": "29/05/2026",
+    "nota": 88,
+    "calificacion": "Notable"
+  },
+  {
+    "archivo": "evaluacion_Gutierrez_Miranda_Herrero.json",
+    "titulo": "El legado artístico de Al-Ándalus",
+    "autor": "Iñaki Gutiérrez Esteban, Héctor Javier Miranda Crespo, Fernando Herrero de Tejada Tamayo",
+    "fecha": "29/05/2026",
+    "nota": 85,
+    "calificacion": "Notable"
+  },
+  {
+    "archivo": "evaluacion_Barbero_Bertolini_Caballero.json",
+    "titulo": "Persigue el Arte: censura, poder y disidencia",
+    "autor": "Ramiro Barbero González, Sandra Bertolini Crespo, Antonio Caballero Pastrana",
+    "fecha": "29/05/2026",
+    "nota": 91,
+    "calificacion": "Sobresaliente"
+  },
+  {
+    "archivo": "evaluacion_Prada_Rebollar_Martin_Hernandez.json",
+    "titulo": "Visita al Museo Oriental",
+    "autor": "Gonzalo Prada Aroca, Luis David Rebollar García, María Blanca Martín Simal, Aitor Hernández Hernández",
+    "fecha": "29/05/2026",
+    "nota": 78,
+    "calificacion": "Notable"
+  },
+  {
     "archivo": "evaluacion_Perez_Pintos_Sanz.json",
     "titulo": "El tenebrismo del Barroco",
-    "autor": "Perez, Pintos, Sanz, Tejo Ruiz",
+    "autor": "Pérez, Pintos, Sanz, Tejo Ruiz",
     "fecha": "29/05/2026",
     "nota": 87,
     "calificacion": "Notable"
