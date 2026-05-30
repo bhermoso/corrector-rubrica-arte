@@ -653,7 +653,13 @@ var BASE_URL = (function(){
   return loc.substring(0, loc.lastIndexOf('/') + 1);
 })();
 
-var CURSO_ACTUAL = null;
+var CURSOS = [
+  {id:'2025-2026', label:'Curso 2025-2026', carpeta:'2025-2026'},
+  {id:'2026-2027', label:'Curso 2026-2027', carpeta:'2026-2027'},
+  {id:'2027-2028', label:'Curso 2027-2028', carpeta:'2027-2028'},
+  {id:'2028-2029', label:'Curso 2028-2029', carpeta:'2028-2029'},
+  {id:'2029-2030', label:'Curso 2029-2030', carpeta:'2029-2030'}
+];
 
 function abrirTrabajos(){
   document.getElementById('overlay-trabajos').classList.add('open');
@@ -666,29 +672,20 @@ function cerrarSiOverlayTrabajos(e){
   if(e.target===document.getElementById('overlay-trabajos')) cerrarTrabajos();
 }
 
-var CURSOS = [
-  {id:"2025-2026", label:"Curso 2025-2026", carpeta:"2025-2026"},
-  {id:"2026-2027", label:"Curso 2026-2027", carpeta:"2026-2027"},
-  {id:"2027-2028", label:"Curso 2027-2028", carpeta:"2027-2028"},
-  {id:"2028-2029", label:"Curso 2028-2029", carpeta:"2028-2029"},
-  {id:"2029-2030", label:"Curso 2029-2030", carpeta:"2029-2030"}
-];
-
 function cargarCursos(){
-  var lista = document.getElementById("trabajos-lista");
-  lista.innerHTML = "<div style="margin-bottom:.75rem;font-size:.8rem;color:var(--text3)">Selecciona un curso academico:</div>";
+  var lista = document.getElementById('trabajos-lista');
+  lista.innerHTML = '<div style="margin-bottom:.75rem;font-size:.8rem;color:var(--text3)">Selecciona un curso academico:</div>';
   CURSOS.forEach(function(c){
-    var item = document.createElement("div");
-    item.className = "trabajo-item";
-    item.innerHTML = "<div class="trabajo-info"><div class="trabajo-titulo" style="font-size:1rem">" + c.label + "</div></div>"
-      + "<div style="color:var(--text3);font-size:.8rem">&#9654;</div>";
+    var item = document.createElement('div');
+    item.className = 'trabajo-item';
+    item.innerHTML = '<div class="trabajo-info"><div class="trabajo-titulo" style="font-size:1rem">&#128193; ' + c.label + '</div></div>'
+      + '<div style="color:var(--text3);font-size:.8rem">&#9654;</div>';
     item.onclick = function(){ cargarListaTrabajos(c); };
     lista.appendChild(item);
   });
 }
 
 function cargarListaTrabajos(curso){
-  CURSO_ACTUAL = curso;
   var lista = document.getElementById('trabajos-lista');
   lista.innerHTML = '<div class="trabajos-loading"><div class="spin"></div> <span>Cargando trabajos...</span></div>';
   fetch(BASE_URL + curso.carpeta + '/trabajos.json?v=' + Date.now(), {cache: 'no-store'})
@@ -699,7 +696,7 @@ function cargarListaTrabajos(curso){
         return;
       }
       lista.innerHTML = '<div style="margin-bottom:.75rem;font-size:.8rem;color:var(--text3);display:flex;align-items:center;gap:.5rem">'
-        + '<button onclick="cargarCursos()" style="background:none;border:none;cursor:pointer;color:var(--accent);font-size:.85rem;padding:0">← Cursos</button>'
+        + '<button onclick="cargarCursos()" style="background:none;border:none;cursor:pointer;color:var(--accent);font-size:.85rem;padding:0">&larr; Cursos</button>'
         + '<span>/ ' + curso.label + '</span></div>';
       trabajos.forEach(function(t){
         var item = document.createElement('div');
@@ -719,39 +716,7 @@ function cargarListaTrabajos(curso){
       });
     })
     .catch(function(){
-      lista.innerHTML = '<div class="trabajos-empty">No se pudo cargar la lista de trabajos.</div>';
-    });
-}
-
-function cargarListaTrabajosFallback(){
-  var lista = document.getElementById('trabajos-lista');
-  fetch(BASE_URL + 'trabajos.json?v=' + Date.now(), {cache: 'no-store'})
-    .then(function(r){ return r.json(); })
-    .then(function(trabajos){
-      if(!trabajos || trabajos.length === 0){
-        lista.innerHTML = '<div class="trabajos-empty">No hay trabajos evaluados todavía.</div>';
-        return;
-      }
-      lista.innerHTML = '';
-      trabajos.forEach(function(t){
-        var item = document.createElement('div');
-        item.className = 'trabajo-item';
-        var califCls = t.nota>=90?'cs':t.nota>=70?'cn':t.nota>=50?'ca':'ci';
-        item.innerHTML = '<div class="trabajo-info">'
-          + '<div class="trabajo-titulo">' + t.titulo + '</div>'
-          + '<div class="trabajo-autor">' + t.autor + '</div>'
-          + '<div class="trabajo-fecha">' + t.fecha + '</div>'
-          + '</div>'
-          + '<div class="trabajo-nota">'
-          + '<div class="trabajo-nota-num">' + t.nota + '</div>'
-          + '<span class="trabajo-nota-calif calif-badge ' + califCls + '" style="display:inline-block;margin-top:3px;padding:2px 8px;border-radius:12px;font-size:.68rem;font-weight:600">' + t.calificacion + '</span>'
-          + '</div>';
-        item.onclick = function(){ cargarTrabajo(t.archivo); };
-        lista.appendChild(item);
-      });
-    })
-    .catch(function(){
-      lista.innerHTML = '<div class="trabajos-empty">No se pudo cargar la lista.</div>';
+      lista.innerHTML = '<div class="trabajos-empty">No hay trabajos evaluados en este curso todavia.</div>';
     });
 }
 
