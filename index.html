@@ -666,35 +666,25 @@ function cerrarSiOverlayTrabajos(e){
   if(e.target===document.getElementById('overlay-trabajos')) cerrarTrabajos();
 }
 
+var CURSOS = [
+  {id:"2025-2026", label:"Curso 2025-2026", carpeta:"2025-2026"},
+  {id:"2026-2027", label:"Curso 2026-2027", carpeta:"2026-2027"},
+  {id:"2027-2028", label:"Curso 2027-2028", carpeta:"2027-2028"},
+  {id:"2028-2029", label:"Curso 2028-2029", carpeta:"2028-2029"},
+  {id:"2029-2030", label:"Curso 2029-2030", carpeta:"2029-2030"}
+];
+
 function cargarCursos(){
-  var lista = document.getElementById('trabajos-lista');
-  lista.innerHTML = '<div class="trabajos-loading"><div class="spin"></div> <span>Cargando cursos...</span></div>';
-  fetch(BASE_URL + 'cursos.json?v=' + Date.now(), {cache: 'no-store'})
-    .then(function(r){ return r.json(); })
-    .then(function(cursos){
-      if(!cursos || cursos.length === 0){
-        lista.innerHTML = '<div class="trabajos-empty">No hay cursos disponibles.</div>';
-        return;
-      }
-      // Si solo hay un curso, cargarlo directamente
-      if(cursos.length === 1){
-        cargarListaTrabajos(cursos[0]);
-        return;
-      }
-      lista.innerHTML = '<div style="margin-bottom:.75rem;font-size:.8rem;color:var(--text3)">Selecciona un curso académico:</div>';
-      cursos.forEach(function(c){
-        var item = document.createElement('div');
-        item.className = 'trabajo-item';
-        item.innerHTML = '<div class="trabajo-info"><div class="trabajo-titulo" style="font-size:1rem">' + c.label + '</div></div>'
-          + '<div style="color:var(--text3);font-size:.8rem">▶</div>';
-        item.onclick = function(){ cargarListaTrabajos(c); };
-        lista.appendChild(item);
-      });
-    })
-    .catch(function(){
-      // Fallback: intentar trabajos.json raíz (compatibilidad)
-      cargarListaTrabajosFallback();
-    });
+  var lista = document.getElementById("trabajos-lista");
+  lista.innerHTML = "<div style="margin-bottom:.75rem;font-size:.8rem;color:var(--text3)">Selecciona un curso academico:</div>";
+  CURSOS.forEach(function(c){
+    var item = document.createElement("div");
+    item.className = "trabajo-item";
+    item.innerHTML = "<div class="trabajo-info"><div class="trabajo-titulo" style="font-size:1rem">" + c.label + "</div></div>"
+      + "<div style="color:var(--text3);font-size:.8rem">&#9654;</div>";
+    item.onclick = function(){ cargarListaTrabajos(c); };
+    lista.appendChild(item);
+  });
 }
 
 function cargarListaTrabajos(curso){
