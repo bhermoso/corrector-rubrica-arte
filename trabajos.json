@@ -70,5 +70,13 @@
     "fecha": "29/05/2026",
     "nota": 87,
     "calificacion": "Notable"
+  },
+  {
+    "archivo": "evaluacion_Cantos_Escribano_Pizarro.json",
+    "titulo": "El código Da Vinci",
+    "autor": "Lourdes Cantos López, Sara Escribano Porras, Gabriel Pizarro Pérez",
+    "fecha": "29/05/2026",
+    "nota": 82,
+    "calificacion": "Notable"
   }
 ]
